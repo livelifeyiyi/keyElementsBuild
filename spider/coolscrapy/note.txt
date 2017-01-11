@@ -1,0 +1,12 @@
+http://api.search.sina.com.cn/?q=%E6%9A%B4%E6%81%90&c=news&page=1&num=24&oe=utf-8&range=keyword&callback=feedsLoader.paint
+http://api.search.sina.com.cn/?q=%E6%9A%B4%E6%81%90&c=news&page=1&num=24&oe=utf-8&range=keyword
+
+#replace page=1-5
+
+.result.list["0"].url
+"0"-"23"
+.datetime
+
+
+result = [json.loads(line) for line in open('response.json')]
+print result[0]['result']["list"][0]["url"]
