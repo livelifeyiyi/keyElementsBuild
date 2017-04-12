@@ -19,6 +19,7 @@ def create_news_table(engine):
 
 
 #declare table "Article"
+"""
 class Article(Base):
 	__tablename__ = 'sina_article'
 	id = Column(Integer, primary_key=True)
@@ -34,3 +35,19 @@ class Article(Base):
 	def __repr__(self):
 		return "<Article(url='%s', title='%s', publish_time='%s', body='%s', keywords='%s')>" % \
 			   (self.url, self.title, self.publish_time, self.body, self.keywords)
+"""
+class Article(Base):
+	__tablename__ = 'baike_artists'
+	id = Column(Integer, primary_key=True)
+	url = Column(String(200))
+	name = Column(Text)
+	#publish_time = Column(String(20))
+	summary = Column(Text)
+	#content = Column(Text)
+	#tagItems = Column(Text)
+	uploadTime = Column(TIMESTAMP)
+	#source_site = Column(String(50))
+
+	def __repr__(self):
+		return "<Article(url='%s', name='%s',  summary='%s')>" % \
+			   (self.url, self.name, self.summary)

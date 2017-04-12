@@ -27,13 +27,13 @@ DATABASE = {'drivername': 'mysql',
             'password': 'root',
             'database': 'spider',
             'query': {'charset': 'utf8'}}
-
-LOG_FILE = 'sina_spider.log'
+LOG_FILE = 'baike_spider.log'
+#LOG_FILE = 'sina_spider.log'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'coolscrapy (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

@@ -7,7 +7,16 @@
 
 from scrapy.item import Item, Field
 
-
+class BaiduBaikeItem(Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    name = Field()
+    summary = Field()
+    #category = Field()
+    link = Field()
+    #postTime = Field()
+    #content = Field()
+    #tagitem = Field()
 class SampleItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()

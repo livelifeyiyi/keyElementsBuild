@@ -29,7 +29,7 @@ class JsonWriterPipeline(object):
 class TxtWriterPipeline(object):
     '''将正文内容写入1个文本'''
     def __init__(self):
-        self.file = open('sina_article.txt', 'w+')
+        self.file = open('baike_list.txt', 'w+')
     def process_item(self, item, spider):
         line = item['content'].encode("utf-8")
         self.file.write(line)
@@ -64,10 +64,10 @@ class ArticleDataBasePipeline(object):
 
     def process_item(self, item, spider):
         a = Article(url=item["link"],
-                    title=item["title"].encode("utf-8"),
-                    publish_time=item["postTime"].encode("utf-8"),
-                    body=item["content"].encode("utf-8"),
-                    keywords=item['keywords'].encode("utf-8"),
+                    name=item["name"].encode("utf-8"),
+                    summary=item["summary"].encode("utf-8")
+                    #content=item["content"].encode("utf-8"),
+                    #tagitem=item['tagitem'].encode("utf-8"),
                     )
         # summary=item['summary'].encode("utf-8"),
         # source_site=item["source_site"].encode("utf-8")
