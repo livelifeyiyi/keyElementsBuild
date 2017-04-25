@@ -12,11 +12,11 @@ import jieba.analyse
 docPath = './wikidata/wiki.zh.text.jian'
 file = open(docPath)
 doc = file.read()
-#resPath = './jieba_result/sina_default_mode.txt'
+# resPath = './jieba_result/sina_default_mode.txt'
 resPath = 'jieba_result/wiki.zh.text.jian.seg'
 def get_wordseg(doc):
 	seg_list = jieba.cut(doc, cut_all=False)
-	#print("Default Mode: " + "/ ".join(seg_list))  # 精确模式
+	# print("Default Mode: " + "/ ".join(seg_list))  # 精确模式
 	str_default = " ".join(seg_list)
 	file = open(resPath,'w')
 	file.write(str_default)
@@ -30,4 +30,4 @@ def get_keywords(doc):
 	file.write(keywords)
 	file.close()
 get_wordseg(doc)
-#get_keywords(doc)
+# get_keywords(doc)
