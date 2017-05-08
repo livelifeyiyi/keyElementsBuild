@@ -1,0 +1,2 @@
+2017-05-07 11:45:53 [scrapy.utils.log] INFO: Scrapy 1.3.0 started (bot: coolscrapy)
+2017-05-07 11:45:53 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'coolscrapy.spiders', 'SPIDER_MODULES': ['coolscrapy.spiders'], 'LOG_FILE': 'sinaNews_spider.log', 'BOT_NAME': 'coolscrapy'}

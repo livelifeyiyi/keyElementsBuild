@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for coolscrapy project
+# Scrapy settings for rightsLawyerSpider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,31 +9,17 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'coolscrapy'
+BOT_NAME = 'rightsLawyerSpider'
 
-SPIDER_MODULES = ['coolscrapy.spiders']
-NEWSPIDER_MODULE = 'coolscrapy.spiders'
+SPIDER_MODULES = ['rightsLawyerSpider.spiders']
+NEWSPIDER_MODULE = 'rightsLawyerSpider.spiders'
 
-ITEM_PIPELINES = {
-    'coolscrapy.pipelines.ArticleDataBasePipeline': 50,
-    'coolscrapy.pipelines.TxtWriterPipeline': 50,
-}
 
-# linux pip install MySQL-python
-DATABASE = {'drivername': 'mysql',
-            'host': '127.0.0.1',
-            'port': '8080',
-            'username': 'root',
-            'password': 'root',
-            'database': 'spider',
-            'query': {'charset': 'utf8'}}
-LOG_FILE = 'sinaNews_spider.log'
-#LOG_FILE = 'sina_spider.log'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'coolscrapy (+http://www.yourdomain.com)'
+#USER_AGENT = 'rightsLawyerSpider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -61,13 +47,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'coolscrapy.middlewares.CoolscrapySpiderMiddleware': 543,
+#    'rightsLawyerSpider.middlewares.RightslawyerspiderSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'coolscrapy.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'rightsLawyerSpider.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -79,7 +65,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'coolscrapy.pipelines.SomePipeline': 300,
+#    'rightsLawyerSpider.pipelines.SomePipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

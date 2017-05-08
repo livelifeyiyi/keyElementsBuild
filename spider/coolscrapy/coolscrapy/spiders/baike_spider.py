@@ -7,6 +7,24 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+class SinaNewsSpider(scrapy.Spider):
+	"""get sina envent news"""
+	name = "sinaNews"
+	llowed_domains = ["sina.com.cn"]
+	start_urls = []
+	for pagenum in range(1, 100):
+		url = "http://api.roll.news.sina.com.cn/zt_list?channel=news&cat_1=gnxw&cat_2==gdxw1||=gatxw||=zs-pl||=mtjj&level==1||=2&show_ext=1&show_all=1&show_num=22&tag=1&format=json&page=%s&callback=newsloadercallback"%pagenum
+		start_urls.append(url)
+	def parse(self, response):
+		sites = json.loads(response.body_as_unicode())
+		item = sinaUrlItem()
+		
+		data = sites['result']['data']
+		for i in range(0, 22):
+			item['title'] = data[i]['title']
+			item['url'] = data[i]['url']
+			item['keywords'] = data[i]['keywords']
+		yield item
 
 class SampleSpider(scrapy.Spider):
 	# Spider名称，必须是唯一的

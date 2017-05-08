@@ -37,17 +37,17 @@ class Article(Base):
 			   (self.url, self.title, self.publish_time, self.body, self.keywords)
 """
 class Article(Base):
-	__tablename__ = 'baike_artists'
+	__tablename__ = 'sina_news'
 	id = Column(Integer, primary_key=True)
 	url = Column(String(200))
-	name = Column(Text)
+	title = Column(Text)
 	#publish_time = Column(String(20))
-	summary = Column(Text)
+	keywords = Column(Text)
 	#content = Column(Text)
 	#tagItems = Column(Text)
 	uploadTime = Column(TIMESTAMP)
 	#source_site = Column(String(50))
 
 	def __repr__(self):
-		return "<Article(url='%s', name='%s',  summary='%s')>" % \
-			   (self.url, self.name, self.summary)
+		return "<Article(url='%s', title='%s',  keywords='%s')>" % \
+			   (self.url, self.title, self.keywords)

@@ -27,3 +27,7 @@ class SampleItem(Item):
     postTime = Field()
     content = Field()
     keywords = Field()
+class sinaUrlItem(Item):
+    title = Field()
+    url = Field()
+    keywords = Field()
