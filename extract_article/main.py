@@ -6,7 +6,7 @@ from cx_extractor import cx_extractor_Python
 from sinaNews_url_list import url_list
 #import MySQLdb
 
-file_dir = 'I:/data/sina_news_article'
+file_dir = 'K:/data/sina_news_article/'
 table_name = 'baike_artists'
 
 def getURLfromDB():
@@ -25,14 +25,18 @@ def getURLfromDB():
 cx = cx_extractor_Python()
 # test_html = cx.readHtml("E:\\Documents\\123.html") #html代码文件
 #url = "http://news.sina.com.cn/c/nd/2017-01-08/doc-ifxzkfuh6130021.shtml"
-i = 0
+i = 831
 for url in url_list[832:]:
-	test_html = cx.getHtml(url)
-	if test_html:
-		content = cx.filter_tags(test_html)
-		s = cx.getText(content)
-		file_name = file_dir + name[i] + '.txt'
-		file = open(file_name, 'w')
-		file.write(s)
-	print i
 	i += 1
+	print i
+	try:
+		test_html = cx.getHtml(url)
+	except Exception as e:
+		print e
+		continue
+	content = cx.filter_tags(test_html)
+	s = cx.getText(content)
+	file_name = file_dir + 'sina_news_article' + str(i) + '.txt'
+	file = open(file_name, 'w')
+	file.write(s)	
+	

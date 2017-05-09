@@ -3,7 +3,7 @@
 #################
 import sys, os
 
-file_dir = 'I:/data/sina_news_article/'
+file_dir = 'K:/data/sina_news_article/'
 #file_dir = 'D:\\New folder\\test'
 def join(path, out_filename):
 	out_file = open(out_filename, 'w+')
